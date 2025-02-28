@@ -1,0 +1,8 @@
+<div class="card" (click)="navigateToDetail(product.id)">
+  <h3>{{ product.name }}</h3>
+  <p>{{ product.description }}</p>
+  <p>
+    <strong>Price: ${{ product.price }}</strong>
+  </p>
+  <button (click)="handleAddToCart(product.id, $event)">Add to Cart</button>
+</div>

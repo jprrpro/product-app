@@ -1,0 +1,8 @@
+<div *ngIf="product()">
+  <h2>{{ product()?.name }}</h2>
+  <p>{{ product()?.description }}</p>
+  <p>
+    <strong>Price: ${{ product()?.price }}</strong>
+  </p>
+  <a routerLink="/products">Back to Products</a>
+</div>
