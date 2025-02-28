@@ -11,6 +11,7 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './product-detail.component.scss',
 })
 export class ProductDetailComponent {
+  // Product signal
   product: WritableSignal<Product | undefined> = signal<Product | undefined>(undefined);
 
   constructor(
@@ -19,7 +20,9 @@ export class ProductDetailComponent {
   ) {}
 
   ngOnInit() {
+    // Get product id from route
     const id = Number(this.route.snapshot.paramMap.get('id'));
+    // Load product by id
     this.productService
       .getProductById(id)
       .subscribe((product) => this.product.set(product));

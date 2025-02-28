@@ -7,7 +7,7 @@ import { Router, RouterModule } from '@angular/router';
   selector: 'app-product-card',
   imports: [CommonModule, RouterModule],
   templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.scss',
+  styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent {
   @Input() product!: Product;

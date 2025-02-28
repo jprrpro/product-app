@@ -11,12 +11,22 @@ import { ProductService } from '../../services/product.service';
   styleUrl: './product-list.component.scss'
 })
 export class ProductListComponent {
+  // Products signal
   products: WritableSignal<Product[]> = signal<Product[]>([]);
-
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
+    // Load products
     this.productService.getProducts().subscribe(products => this.products.set(products));
+  }
+
+  /**
+   * Adds product to cart
+   * 
+   * @param product Product
+   */
+  handleAddToCart(product: Product) {
+    alert(`Product added to cart: ${product.name}`);
   }
 }
